@@ -11,10 +11,11 @@ echo $HOST
 #echo "Creating interactive container for wordpress-hhvm-php-fpm-fallback"
 #echo "PORT: $PORT"
 
-docker run -i -t --rm -p $PORT:80 --name "gazelle-heroku-core" \
+docker run -i -t --rm -p $PORT:80 --name "gazelle-wordpress-core" \
+  --link mysql:mysql \
   -e "DB_HOST=$DB_HOST" \
   -e "DB_NAME=$DB_NAME" \
   -e "DB_USER=$DB_USER" \
   -e "DB_PASSWORD=$DB_PASSWORD" \
   -e "WP_HOME=$URL" \
-  gazelle-heroku-core /sbin/my_init -- bash -l
+  gazelle-wordpress-core /sbin/my_init -- bash -l

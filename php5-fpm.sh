@@ -1,3 +1,3 @@
 #!/bin/sh
 
-service php5-fpm start
+php5-fpm

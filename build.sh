@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t="gazelle-heroku-core" .
+docker build -t="gazelle-wordpress-core" .
