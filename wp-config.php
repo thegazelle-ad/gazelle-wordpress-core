@@ -93,8 +93,8 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
-define('WP_DEBUG_LOG', true);
+define('WP_DEBUG', false);
+define('WP_DEBUG_LOG', false);
 
 if( strlen(getenv("WP_HOME")) > 0 ) {
   define('WP_HOME', getenv("WP_HOME"));
