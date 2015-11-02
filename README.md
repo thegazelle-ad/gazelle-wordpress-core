@@ -28,8 +28,9 @@ https://github.com/tutumcloud/tutum-docker-mysql
 
 If you want to use a mysql from a local container there is an optional DB_LINK parameter, where you
 just need to pass the name of the DB's container. It will always connect on port 3306.
+It's url in the containe will be the same as the DB container's name.
 
-    PORT=80 DB_LINK="mysql" DB_HOST="my_wp_host" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass URL="http://localhost/" ./interactive.sh
+    PORT=80 DB_LINK="mysql" DB_HOST="mysql" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass URL="http://localhost/" ./interactive.sh
 
 ##References
 
