@@ -12,6 +12,7 @@ echo $HOST
 #echo "PORT: $PORT"
 
 docker run -i -t --rm -p $PORT:80 --name "gazelle-wordpress-core" \
+  ${DB_LINK:+ --link "${DB_LINK}:${DB_LINK}" }\
   -e "DB_HOST=$DB_HOST" \
   -e "DB_NAME=$DB_NAME" \
   -e "DB_USER=$DB_USER" \
