@@ -4,6 +4,11 @@ This does not come with mysql installation.
 
 ##How to use
 
+Make sure to pull the submodules first
+
+    git submodule init
+    git submodule update
+
 First build the container
 
     ./build.sh

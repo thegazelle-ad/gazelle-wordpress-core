@@ -11,10 +11,9 @@ echo $HOST
 #echo "Creating interactive container for wordpress-hhvm-php-fpm-fallback"
 #echo "PORT: $PORT"
 
-docker run -i -t --rm -p $PORT:80 --name "wordpress-hhvm-php-fpm-fallback" \
-  --link mysql:mysql \
+docker run -i -t --rm -p $PORT:80 --name "gazelle-wordpress-core" \
   -e "DB_HOST=$DB_HOST" \
   -e "DB_NAME=$DB_NAME" \
   -e "DB_USER=$DB_USER" \
   -e "DB_PASSWORD=$DB_PASSWORD" \
-  docker-wordpress-hhvm-php-fpm-fallback
+  gazelle-wordpress-core
