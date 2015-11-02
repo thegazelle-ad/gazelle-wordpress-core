@@ -15,11 +15,11 @@ First build the container
 
 To start the server just use
 
-    PORT=80 DB_HOST="my_wp_host" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass ./start.sh 
+    PORT=80 DB_HOST="my_wp_host" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass URL="http://localhost/" ./start.sh 
 
 To boot this into an interactive shell you can use
 
-    PORT=80 DB_HOST="my_wp_host" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass ./interactive.sh
+    PORT=80 DB_HOST="my_wp_host" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass URL="http://localhost/" ./interactive.sh
 
 As this container does not contain mysql, you need to set one up separately. You can use a hosted
 solution or the following docker image works also:

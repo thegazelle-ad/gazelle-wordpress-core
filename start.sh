@@ -4,7 +4,7 @@ PORT=${PORT:-3000} # port that wordpress will run on
 DB_HOST=${DB_HOST:-localhost}
 DB_NAME=${DB_NAME:-wordpress}
 DB_USER=${DB_USER:-admin}
-DB_PASSWORD=${DB_USER:-password}
+DB_PASSWORD=${DB_PASSWORD:-password}
 
 echo $HOST
 
@@ -16,4 +16,5 @@ docker run -i -t --rm -p $PORT:80 --name "gazelle-wordpress-core" \
   -e "DB_NAME=$DB_NAME" \
   -e "DB_USER=$DB_USER" \
   -e "DB_PASSWORD=$DB_PASSWORD" \
+  -e "WP_HOME=$URL" \
   gazelle-wordpress-core
