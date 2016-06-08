@@ -24,13 +24,17 @@ To boot this into an interactive shell you can use
 As this container does not contain mysql, you need to set one up separately. You can use a hosted
 solution or the following docker image works also:
 
-https://github.com/tutumcloud/tutum-docker-mysql
+https://hub.docker.com/_/mysql/
 
-If you want to use a mysql from a local container there is an optional DB_LINK parameter, where you
-just need to pass the name of the DB's container. It will always connect on port 3306.
-It's url in the containe will be the same as the DB container's name.
+If using the local container there are good instructions for the mysql container in the above link. To get the image you simply pull it. 
 
-    PORT=80 DB_LINK="mysql" DB_HOST="mysql" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass URL="http://localhost/" ./interactive.sh
+	docker pull mysql
+
+You should then remember to create a data container and connect it to the mysql container when you run it using --variables-from. To link the Gazelle container to the database you use the optional DB_LINK parameter. Pass the name of the mysql container in this parameter and the DB_HOST parameter.
+
+    PORT=80 DB_LINK="mysql_container_name" DB_HOST="mysql_container_name" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass URL="http://localhost/" ./interactive.sh 
+
+It will always connect on port 3306, and its url in the container will be the same as the DB container's name.
 
 ##References
 
