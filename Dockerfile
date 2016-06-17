@@ -60,6 +60,10 @@ RUN sed -i '/daemonize /c \
 RUN sed -i '/clear_env /c \
   clear_env = no' /etc/php5/fpm/pool.d/www.conf
 
+# change max_children
+ADD ./increase_max_children.py /increase_max_children.py
+RUN python3 /increase_max_children.py
+
 # private expose
 EXPOSE 80
 

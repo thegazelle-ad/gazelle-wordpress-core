@@ -1,0 +1,7 @@
+inFile = open("/etc/php5/fpm/pool.d/www.conf", "r", encoding = "utf-8")
+string = inFile.read()
+string = string.replace("pm.max_children = 5", "pm.max_children = 100")
+inFile.close()
+out = open("/etc/php5/fpm/pool.d/www.conf", "w", encoding = "utf-8")
+out.write(string)
+out.close()
