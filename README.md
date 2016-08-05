@@ -30,7 +30,7 @@ If using the local container there are good instructions for the mysql container
 
 	docker pull mysql
 
-You should then remember to create a data container and connect it to the mysql container when you run it using --variables-from. To link the Gazelle container to the database you use the optional DB_LINK parameter. Pass the name of the mysql container in this parameter and the DB_HOST parameter.
+You should then remember to create a data container and connect it to the mysql container when you run it using --volumes-from. To link the Gazelle container to the database you use the optional DB_LINK parameter. Pass the name of the mysql container in this parameter and the DB_HOST parameter.
 
     PORT=80 DB_LINK="mysql_container_name" DB_HOST="mysql_container_name" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass URL="http://localhost/" ./interactive.sh 
 
